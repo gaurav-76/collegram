@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter/cupertino.dart';
+import 'package:project/pages/event/meeting.dart';
 import 'package:project/pages/home_widgets/home_page_list.dart';
 import 'package:project/pages/profile_page.dart';
 import 'package:velocity_x/velocity_x.dart';

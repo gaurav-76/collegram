@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:project/pages/event_page.dart';
 import 'package:project/pages/home_page.dart';
+import 'package:project/pages/notice/notice_list.dart';
 import 'package:project/pages/notice_page.dart';
+import 'package:project/pages/profile/profile_page.dart';
 import 'package:project/pages/profile_page.dart';
 import 'package:velocity_x/velocity_x.dart';
-
+import 'package:project/pages/event/meeting.dart';
 import '../../utils/routes.dart';
 import 'different_page.dart';
 
@@ -28,9 +30,9 @@ class BottomBarState extends State<BottomBar> {
   // ];
   final List _children = [
     HomePage(),
-    NoticePage(),
-    EventPage(),
-    ProfilePage(),
+    NoticeList(),
+    CustomTableCalendar(),
+    ProfilePage2(),
   ];
 
   @override

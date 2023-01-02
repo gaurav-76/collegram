@@ -5,24 +5,25 @@ import 'package:project/pages/login/change_password.dart';
 //import 'package:project/pages/profile_page.dart';
 import 'login/login_page.dart';
 //import 'login/verify_email.dart';
+import 'package:responsive_flutter/responsive_flutter.dart';
 
 class Setting extends StatefulWidget {
-  Setting({Key? key}) : super(key: key);
+  Setting({Key key}) : super(key: key);
 
   @override
   SettingPage createState() => SettingPage();
 }
 
 class SettingPage extends State<Setting> {
-  final uid = FirebaseAuth.instance.currentUser!.uid;
-  final email = FirebaseAuth.instance.currentUser!.email;
-  final creationTime = FirebaseAuth.instance.currentUser!.metadata.creationTime;
+  final uid = FirebaseAuth.instance.currentUser.uid;
+  final email = FirebaseAuth.instance.currentUser.email;
+  final creationTime = FirebaseAuth.instance.currentUser.metadata.creationTime;
 
-  User? user = FirebaseAuth.instance.currentUser;
+  User user = FirebaseAuth.instance.currentUser;
 
   verifyEmail() async {
-    if (user != null && !user!.emailVerified) {
-      await user!.sendEmailVerification();
+    if (user != null && !user.emailVerified) {
+      await user.sendEmailVerification();
       print('Verification Email has benn sent');
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -43,12 +44,7 @@ class SettingPage extends State<Setting> {
       appBar: AppBar(
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () => Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => BottomBar(),
-                ),
-                (route) => false),
+            onPressed: () => Navigator.of(context).pop(),
           ),
           title: Text(
             'Settings',
@@ -70,7 +66,7 @@ class SettingPage extends State<Setting> {
                   style: TextStyle(
                       fontSize: MediaQuery.of(context).size.height * 0.023),
                 ),
-                user!.emailVerified
+                user.emailVerified
                     ? Text(
                         ' verified',
                         style: TextStyle(
@@ -114,7 +110,8 @@ class SettingPage extends State<Setting> {
                 },
                 child: Text('Logout ',
                     style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.height * 0.023,
+                        fontSize: ResponsiveFlutter.of(context).fontSize(
+                            3), //MediaQuery.of(context).size.height * 0.023,
                         fontWeight: FontWeight.bold)),
               ),
             ),

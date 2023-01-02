@@ -8,9 +8,9 @@ class Avatar extends StatelessWidget {
   final String name;
   final String collegeName;
   const Avatar({
-    Key? key,
-    required this.name,
-    required this.collegeName,
+    Key key,
+     this.name,
+     this.collegeName,
   }) : super(key: key);
 
   //const Avatar({super.key , });

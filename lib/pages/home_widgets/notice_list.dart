@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NoticeList extends StatelessWidget {
-  const NoticeList({super.key});
+  const NoticeList({key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'login_page.dart';
 //import 'package:flutter_fb_auth_emailpass/pages/login.dart';
 
 class Signup extends StatefulWidget {
-  Signup({Key? key}) : super(key: key);
+  Signup({Key key}) : super(key: key);
 
   @override
   _SignupState createState() => _SignupState();
@@ -175,7 +175,7 @@ class _SignupState extends State<Signup> {
                     ElevatedButton(
                       onPressed: () {
                         // Validate returns true if the form is valid, otherwise false.
-                        if (_formKey.currentState!.validate()) {
+                        if (_formKey.currentState.validate()) {
                           setState(() {
                             email = emailController.text;
                             password = passwordController.text;

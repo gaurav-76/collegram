@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 
 class ChangePassword extends StatefulWidget {
-  ChangePassword({Key? key}) : super(key: key);
+  ChangePassword({Key key}) : super(key: key);
 
   @override
   _ChangePasswordState createState() => _ChangePasswordState();
@@ -28,7 +28,7 @@ class _ChangePasswordState extends State<ChangePassword> {
   final currentUser = FirebaseAuth.instance.currentUser;
   changePassword() async {
     try {
-      await currentUser!.updatePassword(newPassword);
+      await currentUser.updatePassword(newPassword);
       FirebaseAuth.instance.signOut();
       Navigator.pushReplacement(
         context,
@@ -81,7 +81,7 @@ class _ChangePasswordState extends State<ChangePassword> {
               ElevatedButton(
                 onPressed: () {
                   // Validate returns true if the form is valid, otherwise false.
-                  if (_formKey.currentState!.validate()) {
+                  if (_formKey.currentState.validate()) {
                     setState(() {
                       newPassword = newPasswordController.text;
                     });

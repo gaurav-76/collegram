@@ -1,6 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:project/pages/event/meeting.dart';
 import 'package:project/pages/login/Login%202/helper.dart';
 import 'package:project/pages/login/change_password.dart';
+import 'package:project/pages/notice/upload_notice.dart';
+import 'package:project/pages/notice/notice_list.dart';
+import 'package:project/pages/profile/profile_page.dart';
 import 'package:project/pages/setting_page.dart';
 import 'package:sizer/sizer.dart';
 import 'firebase_options.dart';
@@ -46,17 +50,16 @@ class MyApp extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(child: CircularProgressIndicator());
           }
-          return Sizer(
-            builder: (context, orientation, deviceType) {
+          return Sizer(builder: (context, orientation, deviceType) {
             return MaterialApp(
                 //appBar: AppBar(),
-          
+
                 themeMode: ThemeMode.system, // thememode.dark
-          
+
                 theme: MyTheme.lightTheme(context),
                 darkTheme: MyTheme.darkTheme(context),
                 debugShowCheckedModeBanner: false,
-                initialRoute: "/intro_slider",
+                initialRoute: "/bottom",
                 routes: {
                   //  "/": (context) => LoginPage(),
                   MyRoutes.intro_sliderRoute: (context) => IntroSliderPage(),
@@ -69,12 +72,13 @@ class MyApp extends StatelessWidget {
                   MyRoutes.homeRoute: (context) => HomePage(),
                   //    MyRoutes.loginRoute: (context) => LoginPage(),
                   //    MyRoutes.cartRoute: (context) => CartPage()
-                  MyRoutes.noticeRoute: (context) => NoticePage(),
-                  MyRoutes.eventRoute: (context) => EventPage(),
-                  MyRoutes.profileRoute: (context) => ProfilePage(),
+                  MyRoutes.noticeRoute: (context) => NoticeList(),
+                  MyRoutes.uploadRoute: (context) => UploadNotice(),
+                  MyRoutes.eventRoute: (context) => CustomTableCalendar(),
+                  MyRoutes.profileRoute: (context) => ProfilePage2(),
                   MyRoutes.settingPageRoute: (context) => Setting(),
                 });
+          });
         });
-  });
   }
 }

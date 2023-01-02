@@ -6,10 +6,10 @@ class EventBox extends StatelessWidget {
   final int b;
 
   const EventBox({
-    Key? key,
-    required this.r,
-    required this.g,
-    required this.b,
+    Key key,
+     this.r,
+     this.g,
+     this.b,
   }) : super(key: key);
 
   @override

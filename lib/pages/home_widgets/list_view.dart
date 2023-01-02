@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 //void main() => runApp(const MyApp());
 
 class MyMalhar extends StatelessWidget {
-  const MyMalhar({super.key});
+  const MyMalhar({key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:project/pages/login/forgot_pass.dart';
 import 'package:project/pages/login/signup_page.dart';
 
 class Login1 extends StatefulWidget {
-  Login1({Key? key}) : super(key: key);
+  Login1({Key key}) : super(key: key);
 
   @override
   _LoginState createState() => _LoginState();
@@ -129,7 +129,7 @@ class _LoginState extends State<Login1> {
                     ElevatedButton(
                       onPressed: () {
                         // Validate returns true if the form is valid, otherwise false.
-                        if (_formKey.currentState!.validate()) {
+                        if (_formKey.currentState.validate()) {
                           setState(() {
                             email = emailController.text;
                             password = passwordController.text;

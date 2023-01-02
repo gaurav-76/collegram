@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
               activeColor: Colors.white,
               onChanged: (value) {
                 setState(() {
-                  _rememberMe = value!;
+                  _rememberMe = value;
                 });
               },
             ),
